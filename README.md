@@ -1,2 +1,1 @@
-# deleteme1
-Testing GHAS secret scanning.
+# Testing GHAS secret scanning
