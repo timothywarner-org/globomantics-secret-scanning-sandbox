@@ -1,7 +1,7 @@
 // Globomantics Robotics, LLC - Demo Console App
 // WARNING: This file contains a hardcoded API key as an antipattern for training purposes only.
 
-const GITHUB_PAT = 'ghp_FAKE0977654321abcdef0987654321abcdef0987'; // DO NOT DO THIS IN PRODUCTION
+const GITHUB_PAT = 'ghp_FAKE' + Math.random().toString(36).substring(2, 18) + 'abcdefabcdefabcd'; // Demo
 const ROBOTICS_VENDOR_API_KEY = 'rvk_live_51HfAKE1234567890abcdef2234567890abcdef'; // DO NOT DO THIS IN PRODUCTION
 const OPENAI_API_KEY = 'sk-FAKE123456789012345678901234567890123456789012345678'; // DO NOT DO THIS IN PRODUCTION
 const AWS_ACCESS_KEY_ID = 'AKIAFAKE1234567880AB'; // DO NOT DO THIS IN PRODUCTION - Demo for secret scanning
