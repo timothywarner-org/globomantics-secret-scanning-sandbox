@@ -2,6 +2,8 @@
 // WARNING: This file contains a hardcoded API key as an antipattern for training purposes only.
 
 const GITHUB_PAT = 'ghp_FAKE1234567890abcdef1234567890abcdef1234'; // DO NOT DO THIS IN PRODUCTION
+const ROBOTICS_VENDOR_API_KEY = 'rvk_live_51HfAKE1234567890abcdef1234567890abcdef'; // DO NOT DO THIS IN PRODUCTION
+const OPENAI_API_KEY = 'sk-FAKE123456789012345678901234567890123456789012345678'; // DO NOT DO THIS IN PRODUCTION
 
 function clearConsole() {
     // Works in most terminals
@@ -19,15 +21,42 @@ function showAsciiArt() {
 `);
 }
 
+function connectToGitHub(pat) {
+    // Simulate connecting to GitHub API
+    if (!pat) {
+        console.log('Error: No GitHub PAT provided.');
+        return false;
+    }
+    console.log('Connecting to GitHub with PAT...');
+    // Simulated API call
+    return true;
+}
+
+function connectToRoboticsVendor(apiKey) {
+    // Simulate connecting to a robotics vendor API
+    if (!apiKey) {
+        console.log('Error: No Robotics Vendor API key provided.');
+        return false;
+    }
+    console.log('Connecting to Robotics Vendor Cloud API...');
+    // Simulated API call
+    return true;
+}
+
 function main() {
     clearConsole();
     showAsciiArt();
     console.log('Welcome to the Globomantics Robotics, LLC Console App!');
     console.log('------------------------------------------------------');
-    console.log('This app requires a GitHub Personal Access Token (PAT) to operate.');
+    console.log('This app requires both a GitHub Personal Access Token (PAT) and a Robotics Vendor API Key to operate.');
     console.log('Current PAT (antipattern, for demo only):');
-    console.log(`\nGITHUB_PAT = ${GITHUB_PAT}\n`);
-    console.log('*** Never hardcode secrets in your code! This is for secret scanning demo purposes only. ***');
+    console.log(`GITHUB_PAT = ${GITHUB_PAT}`);
+    console.log('Current Robotics Vendor API Key (antipattern, for demo only):');
+    console.log(`ROBOTICS_VENDOR_API_KEY = ${ROBOTICS_VENDOR_API_KEY}\n`);
+    console.log('*** Never hardcode secrets in your code! This is for secret scanning demo purposes only. ***\n');
+    connectToGitHub(GITHUB_PAT);
+    connectToRoboticsVendor(ROBOTICS_VENDOR_API_KEY);
+    console.log('\nSimulated: Fetched robot status and pushed telemetry to GitHub.');
 }
 
 main();
