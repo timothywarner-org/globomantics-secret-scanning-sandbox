@@ -3,7 +3,7 @@
 
 const GITHUB_PAT = 'ghp_FAKE' + Math.random().toString(36).substring(2, 18) + 'abcdefabcdefabcd'; // Demo
 const ROBOTICS_VENDOR_API_KEY = 'rvk_live_51HfAKE1234567890abcdef2234567890abcdef'; // DO NOT DO THIS IN PRODUCTION
-const OPENAI_API_KEY = 'sk-FAKE123456789012345678901234567890123456789012345678'; // DO NOT DO THIS IN PRODUCTION
+const OPENAI_API_KEY = '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'
 const AWS_ACCESS_KEY_ID = 'AKIAFAKE1234567880AB'; // DO NOT DO THIS IN PRODUCTION - Demo for secret scanning
 
 function clearConsole() {
