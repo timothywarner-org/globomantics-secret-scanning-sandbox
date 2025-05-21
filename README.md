@@ -1,5 +1,7 @@
 # GHAS Secret Scanning & Push Protection: Quick Test Tutorial
 
+OPENAI_API_KEY="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"
+
 ## 1. Enable All Security Features (One-Liner)
 
 Run this in your terminal (no leading slash!):
