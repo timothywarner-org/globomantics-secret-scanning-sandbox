@@ -1,6 +1,7 @@
 # GHAS Secret Scanning & Push Protection: Quick Test Tutorial
 
-OPENAI_API_KEY="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"
+STRIPE_API_KEY=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
+
 
 ## 1. Enable All Security Features (One-Liner)
 
