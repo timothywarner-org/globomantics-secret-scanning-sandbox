@@ -1,73 +1,72 @@
-# GHAS Secret Scanning & Push Protection: Quick Test Tutorial
+# Globomantics Secret Scanning Sandbox 🤖
 
-## Smoke Test for Webhook Integration
+> A practical sandbox for testing GitHub Advanced Security (GHAS) custom secret scanning patterns
+>
+> From the Office of the CTO, Globomantics Corp.
 
-STRIPE_API_KEY=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
-AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
-AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+## Overview
 
-## 1. Enable All Security Features (One-Liner)
+This repository serves as a learning sandbox for implementing and testing custom secret scanning patterns with GitHub Advanced Security. It's specifically designed for teams learning how to protect their unique authentication token formats using GHAS.
 
-Run this in your terminal (no leading slash!):
+## 🎯 What You'll Learn
 
-```sh
-gh api -X PATCH -H "Accept: application/vnd.github+json" repos/timothywarner-org/deleteme1 \
-  -f security_and_analysis.advanced_security.status=enabled \
-  -f security_and_analysis.secret_scanning.status=enabled \
-  -f security_and_analysis.secret_scanning_push_protection.status=enabled
+- How to define custom secret scanning patterns
+- Testing your patterns in a safe environment
+- Implementing push protection for custom secrets
+- Best practices for secret pattern definition
+
+## 🚀 Quick Start
+
+1. Fork this repository to your organization
+2. Enable GitHub Advanced Security features:
+   ```bash
+   gh api -X PATCH repos/YOUR-ORG/globomantics-secret-sandbox \
+     -f security_and_analysis.advanced_security.status=enabled \
+     -f security_and_analysis.secret_scanning.status=enabled \
+     -f security_and_analysis.secret_scanning_push_protection.status=enabled
+   ```
+3. Run the test script:
+   ```bash
+   ./run-secret-test.sh
+   ```
+
+## 📋 Custom Pattern Example
+
+This repository includes a sample custom pattern for Globomantics robot authentication tokens:
+
+```regex
+gbot-(dev|prod)-[A-Fa-f0-9]{16}
 ```
 
-**Why:** Ensures all required GitHub Advanced Security (GHAS) features are active for secret scanning and push protection.
+This pattern matches our standard robot token format:
+- `gbot-dev-xxxxabcd5678ef90`
+- `gbot-prod-A1B2C3D4E5F6xxxx`
+
+## 🔍 Testing Your Pattern
+
+1. Check the pattern definition in `globomantics-robot-auth-token-formats.md`
+2. Use the provided test script: `run-secret-test.sh`
+3. Monitor results in GitHub Security tab
+
+## 📚 Learning Resources
+
+- [GitHub Docs: Custom Patterns for Secret Scanning](https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/defining-custom-patterns-for-secret-scanning)
+- [Pluralsight Course: GitHub Advanced Security Deep Dive](https://www.pluralsight.com/authors/tim-warner)
+
+## ⚠️ Important Notes
+
+- This is a sandbox environment - perfect for learning and testing
+- Never use real secrets or tokens
+- Pattern testing may take a few minutes to complete
+- Push protection requires additional configuration
+
+## 🤝 Contributing
+
+Found a way to improve the patterns or tests? Submit a PR! We're always looking to enhance our security practices.
+
+## 📄 License
+
+MIT - See [LICENSE](LICENSE) for details
 
 ---
-
-## 2. Verify Security Settings
-
-Check that all features are enabled:
-
-```sh
-gh api repos/timothywarner-org/deleteme1 | grep security_and_analysis
-```
-
-**Expected:** You should see `"status": "enabled"` for advanced_security, secret_scanning, and secret_scanning_push_protection.
-
----
-
-## 3. Test Push Protection (Demo)
-
-1. **Edit your code:**
-   Add or change a fake GitHub PAT in your code (e.g. in `app.js`):
-   ```js
-   const GITHUB_PAT = 'ghp_FAKE11223344556677889900abcdefabcdefabcd'; // Demo
-   ```
-2. **Stage, commit, and push:**
-   ```sh
-   git add app.js
-   git commit -m "Test push protection with new fake PAT"
-   git push
-   ```
-3. **Observe:**
-   - If push protection is working, you'll see a block or warning in your terminal.
-   - If not, check the Security tab in your repo for post-push secret scanning alerts.
-
----
-
-## 4. Check for Secret Scanning Alerts (Post-Push)
-
-Go to your repo on GitHub:
-- **Security** tab → **Secret scanning alerts**
-
-**Why:** Even if push protection doesn't block the push, secret scanning will alert you after the fact.
-
----
-
-## Troubleshooting
-- If you get `invalid API endpoint`, remove the leading slash from the endpoint in your `gh api` command.
-- Push protection only blocks supported secret types (GitHub PATs are the most reliable for demo).
-- All features require GHAS (paid) to be enabled on your repo/org.
-
----
-
-**Teach this!**
-- Demo the error, the fix, and the rationale for each step.
-- Show both push protection (pre-push block) and secret scanning (post-push alert) for maximum impact.
+*"Security is not a product, but a process." - Bruce Schneier*
