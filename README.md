@@ -1,5 +1,12 @@
 # Globomantics Secret Scanning Sandbox 🤖
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Website](https://img.shields.io/badge/Website-TechTrainerTim.com-blue?style=flat-square)](https://techtrainertim.com)
+
+[![Test Globomantics Secret Pattern](https://github.com/timothywarner-org/globomantics-secret-scanning-sandbox/actions/workflows/test-globo-secret-pattern.yml/badge.svg)](https://github.com/timothywarner-org/globomantics-secret-scanning-sandbox/actions/workflows/test-globo-secret-pattern.yml)
+
+[![Test Secret Scanning Alert](https://github.com/timothywarner-org/globomantics-secret-scanning-sandbox/actions/workflows/test-secret-alert.yml/badge.svg)](https://github.com/timothywarner-org/globomantics-secret-scanning-sandbox/actions/workflows/test-secret-alert.yml)
+
 > A practical sandbox for testing GitHub Advanced Security (GHAS) custom secret scanning patterns
 >
 > From the Office of the CTO, Globomantics Corp.
