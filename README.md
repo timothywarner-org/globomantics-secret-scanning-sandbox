@@ -75,5 +75,24 @@ Found a way to improve the patterns or tests? Submit a PR! We're always looking 
 
 MIT - See [LICENSE](LICENSE) for details
 
+## Git Hooks Setup
+
+This repository includes Git hooks for security scanning. To enable them, either:
+
+1. Run the setup script:
+   ```bash
+   ./setup-hooks.sh
+   ```
+
+2. Or manually configure:
+   ```bash
+   git config core.hooksPath .hooks
+   ```
+
+The pre-commit hook will:
+- Scan staged files for AWS keys
+- Block commits that contain potential secrets
+- Show which files contain secrets
+
 ---
 *"Security is not a product, but a process." - Bruce Schneier*
