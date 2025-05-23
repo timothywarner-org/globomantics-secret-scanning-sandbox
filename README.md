@@ -11,9 +11,46 @@
 >
 > From the Office of the CTO, Globomantics Corp.
 
-## Overview
+## Features
 
-This repository serves as a learning sandbox for implementing and testing custom secret scanning patterns with GitHub Advanced Security. It's specifically designed for teams learning how to protect their unique authentication token formats using GHAS.
+- **Custom Pattern Detection**: Scans for Globomantics-specific robot tokens (`gbot-{env}-{hash}`)
+- **AWS Key Detection**: Demonstrates scanning for common cloud provider keys
+- **Push Protection**: Prevents accidental commits of secrets
+- **PR Integration**: Automatically comments on PRs if secrets are detected
+- **Format Validation**: Ensures tokens match expected patterns
+- **TruffleHog Integration**: Deep secret scanning using TruffleHog OSS
+- **Automated Alert Handling**: Creates detailed issues for secret scanning alerts
+
+## Getting Started
+
+1. Clone this repository
+2. Review the token format in `globomantics-robot-auth-token-formats.md`
+3. Try committing a test token to see the protection in action
+
+## How It Works
+
+The secret scanning workflow:
+1. Runs on push and pull requests
+2. Checks for both Globomantics tokens and AWS keys
+3. Validates token formats against defined patterns
+4. Comments on PRs if secrets are found
+
+## Best Practices Demonstrated
+
+- Custom pattern definition for organization-specific secrets
+- Immediate feedback through push protection
+- PR integration for collaborative security
+- Clear error messages and remediation steps
+
+## Learning Resources
+
+- [About secret scanning](https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning)
+- [Custom patterns for secret scanning](https://docs.github.com/en/code-security/secret-scanning/defining-custom-patterns-for-secret-scanning)
+- [Push protection](https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning#about-push-protection)
+
+## License
+
+MIT
 
 ## 🎯 What You'll Learn
 
@@ -93,6 +130,17 @@ The pre-commit hook will:
 - Scan staged files for AWS keys
 - Block commits that contain potential secrets
 - Show which files contain secrets
+
+## Alert Handling
+
+When a secret is detected:
+1. An alert is automatically created
+2. A new issue is generated with:
+   - Direct link to the alert
+   - Required actions
+   - Best practices
+   - Automatic assignment
+3. TruffleHog provides additional verification
 
 ---
 *"Security is not a product, but a process." - Bruce Schneier*
