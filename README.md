@@ -2,8 +2,6 @@
 
 > DevSecOps demonstration of GitHub Advanced Security secret scanning with custom patterns and automated response workflows.
 
-[![Test Secret Scanning Alert](https://github.com/timothywarner-org/globomantics-secret-scanning-sandbox/actions/workflows/test-secret-alert.yml/badge.svg)](https://github.com/timothywarner-org/globomantics-secret-scanning-sandbox/actions/workflows/test-secret-alert.yml)
-
 ## Secret Scanning Flow
 
 ```mermaid
