@@ -118,7 +118,7 @@ Remember: In security tooling, if a simple solution works reliably, it's often b
 
 1. Create a test file with a fake secret:
    ```bash
-   echo "AWS_KEY=AKIAFAKEEXAMPLEKEY" > test-secret.txt
+   echo "XYZ_KEY=AKIAFAKEEXAMPLEKEY" > test-secret.txt
    ```
 
 2. Try to commit the file:
