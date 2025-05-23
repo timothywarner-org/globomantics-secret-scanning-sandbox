@@ -1,5 +1,9 @@
 # Globomantics Secret Scanning Sandbox 🤖
 
+
+WHOOPS_I_DID_IT_AGAIN="gvault-eng-a1B2c3D4e5F6g7H8i9J0"
+
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Website](https://img.shields.io/badge/Website-TechTrainerTim.com-blue?style=flat-square)](https://techtrainertim.com)
 
